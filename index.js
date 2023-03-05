@@ -17,7 +17,7 @@ app.get("/",(req,res)=>{
           // Output items
           console.log("Your most recently played tracks are:");
           data.body.items.forEach(item => console.log(item.track.album.name));
-          res.send(data.body.items[0].track.name);
+          res.send({name:data.body.items[0].track.name});
         }, function(err) {
           console.log('Something went wrong!', err);
         });
