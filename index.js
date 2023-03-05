@@ -12,10 +12,10 @@ spotifyApi.setAccessToken('BQBjtZO8SwF7tN6ZaY5Qnfcq1KHL2iOpK2zo1j0XT4Yxc9cxeCftP
 
 app.get("/",(req,res)=>{
     spotifyApi.getMyRecentlyPlayedTracks({
-        limit : 20
+        limit : 1
       }).then(function(data) {
           // Output items
-          console.log("Your 20 most recently played tracks are:");
+          console.log("Your most recently played tracks are:");
           data.body.items.forEach(item => console.log(item.track));
           res.send(data.body.items);
         }, function(err) {
