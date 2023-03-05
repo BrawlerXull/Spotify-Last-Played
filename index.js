@@ -17,10 +17,11 @@ app.get("/",(req,res)=>{
           // Output items
           console.log("Your 20 most recently played tracks are:");
           data.body.items.forEach(item => console.log(item.track));
+          res.send(data.body.items);
         }, function(err) {
           console.log('Something went wrong!', err);
         });
-    res.send("ok");
+    
 })
 
 
