@@ -1,7 +1,10 @@
 var SpotifyWebApi = require("spotify-web-api-node");
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const request = require("request");
+
+app.use(cors());
 
 let client_Id = "178fbc553c01482e81b6b8ea9f541dfa";
 let client_Secret = "74fee64a34a843a3b79999ff819b36ef";
