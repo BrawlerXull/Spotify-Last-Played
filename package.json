@@ -19,5 +19,6 @@
     "start": "node dist/server.js",
     "build": "tsc",
     "dev": "ts-node src/server.ts"
-  }  
+  }
+  
 }
