@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Track</title>
+    <style>
+        .track-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .track-info img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="track-info">
+        <h1 id="song-name"></h1>
+        <h2 id="artist-name"></h2>
+        <img id="album-image" src="" alt="Album Image">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('song-name').textContent = data.song_name;
+                    document.getElementById('artist-name').textContent = data.artist_name;
+                    document.getElementById('album-image').src = data.image.url;
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
+</body>
+</html>
