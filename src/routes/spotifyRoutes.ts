@@ -3,7 +3,7 @@ import spotifyService from "../services/spotifyService";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
+router.get("/data", (req: Request, res: Response) => {
   spotifyService.getAccessToken((err, accessToken) => {
     if (err) {
       return res.status(500).send("Error getting access token");

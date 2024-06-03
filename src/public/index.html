@@ -4,27 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Track</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
     <style>
+        :root {
+            background: #905bdf;
+            height: 100%;
+        }
+
         .track-info {
             text-align: center;
             margin-top: 50px;
         }
+
         .track-info img {
             max-width: 100%;
             height: auto;
+        }
+
+        img {
+            border-radius: 50px;
+        }
+
+        body {
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+        }
+
+        .artist-name {
+            color: plum;
         }
     </style>
 </head>
 <body>
     <div class="track-info">
-        <h1 id="song-name"></h1>
-        <h2 id="artist-name"></h2>
+        <h1 id="song-name" class="font-effect-outline"></h1>
+        <h2 id="artist-name" class="font-effect-outline artist-name"></h2>
         <img id="album-image" src="" alt="Album Image">
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('/')
+            fetch('/data')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('song-name').textContent = data.song_name;

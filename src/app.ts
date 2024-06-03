@@ -9,7 +9,7 @@ app.use(cors());
 
 app.use("/", spotifyRoutes);
 
-app.use("/public", publicRoutes);
+app.use("/", publicRoutes);
 
 export default app;
 
