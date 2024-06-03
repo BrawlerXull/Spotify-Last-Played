@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
 
     <style>
-        :root {
-            background: #905bdf;
+        html, body {
             height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #905bdf;
         }
 
         .track-info {
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 50px;
         }
 
@@ -34,13 +41,25 @@
         .artist-name {
             color: plum;
         }
+
+        .left-side {
+            padding-right: 40px;
+        }
+
+        .right-side {
+            padding-left: 40px;
+        }
     </style>
 </head>
 <body>
     <div class="track-info">
-        <h1 id="song-name" class="font-effect-outline"></h1>
-        <h2 id="artist-name" class="font-effect-outline artist-name"></h2>
-        <img id="album-image" src="" alt="Album Image">
+        <div class="left-side">
+            <h1 id="song-name" class="font-effect-outline"></h1>
+            <h2 id="artist-name" class="font-effect-outline artist-name"></h2>
+        </div>
+        <div class="right-side">
+            <img id="album-image" src="" alt="Album Image">
+        </div>
     </div>
 
     <script>
